@@ -1,0 +1,257 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	html,body{height: 100%;width: 100%;}
+	body{
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		font-family: "微软雅黑";
+	}
+	header{
+		position: relative;
+		height: 88px;
+		width: 640px;
+		background: #a90506;
+		text-align: center;
+		color: #fff;
+		font-size: 30px;
+		line-height: 88px;
+	}
+	.tou_1{
+		position: absolute;
+		top:21px;
+		left:25px;
+	}
+	.btn{
+		position: absolute;
+		background: #bf0707;
+		height:58px;
+		width:150px;
+		border:2px solid #840202;
+		border-radius:10px;
+		font-size:24px;
+		line-height: 62px;
+		outline: none;
+		color: #fff;
+		top:11px;
+		right:11px;
+	}
+	section{
+		-webkit-box-flex:1;
+		width: 640px;
+	}
+	.jiang{
+		position: relative;
+		height: 695px;
+		width: 610px;
+		background: #a90506;
+		margin:14px 0 0 14px;
+	}
+	.jiang_1{
+		position: absolute;
+		color: #fff;
+		height:200px;
+		width:200px;
+		font-size: 30px;
+		text-align: center;
+		line-height:193px;
+	}
+	.jiang_1:nth-child(1){
+		top:25px;
+		left:10px;
+	}
+	.jiang_1:nth-child(2){
+		top:25px;
+		left:210px;
+	}
+	.jiang_1:nth-child(3){
+		top:25px;
+		left:410px;
+	}
+	.jiang_1:nth-child(4){
+		top:245px;
+		left:410px;
+	}
+	.jiang_1:nth-child(5){
+		top:465px;
+		left:410px;
+	}
+	.jiang_1:nth-child(6){
+		top:465px;
+		left:210px;
+	}
+	.jiang_1:nth-child(7){
+		top:465px;
+		left:10px;
+	}
+	.jiang_1:nth-child(8){
+		top:245px;
+		left:10px;
+	}
+	.jiang_1:nth-child(9){
+		top:245px;
+		left:210px;
+		background: #640000;
+	}
+	.jiang .bb{background: #fff;}
+	.jiang_content{
+		height: 310px;
+		margin:18px 0 0 13px;
+		border:1px solid #a90506;
+		border-bottom:none;
+		width: 610px;
+		background: #ff4948;
+		overflow: hidden;
+	}
+	.jiang_content p{
+		height: 70px;
+		font-size: 30px;
+		line-height: 70px;
+		color: #630100;
+		text-indent: 2em;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<img src="img/1.png" alt="" class="tou_1">
+		<h3>转盘抽奖</h3>
+		<button class="btn">退出登录</button>
+	</header>
+	<section>
+		<ul class="jiang">
+			<li class="jiang_1">
+				一等奖
+			</li>
+			<li class="jiang_1">
+				二等奖
+			</li>
+			<li class="jiang_1">
+				三等奖
+			</li>
+			<li class="jiang_1">
+				四等奖
+			</li>
+			<li class="jiang_1">
+				五等奖
+			</li>
+			<li class="jiang_1">
+				六等奖
+			</li>
+			<li class="jiang_1">
+				七等奖
+			</li>
+			<li class="jiang_1">
+				谢谢参与
+			</li>
+			<li class="jiang_1">
+				抽奖
+			</li>
+		</ul>
+		<div class="jiang_content">
+			
+		</div>
+	</section>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script>
+	function bodyScale(){
+		var devicewidth=document.documentElement.clientWidth;
+		var scale=devicewidth/640;
+		document.body.style.zoom=scale;
+	}
+	window.onload=window.onresize=function(){
+		bodyScale();
+		$(function(){
+			var i=0;
+			var timer=null;
+			var n = 0;
+			var speed=0;
+			var index = 0;
+			$("li").eq(8).on("touchend",function(){
+				function move(){
+					timer=setTimeout(function(){
+						speed+=50;
+						$("li").removeClass("bb");
+						$("li").eq(index).addClass("bb");
+						index++;
+						if(index>7){
+							index=0;
+						};
+						if(speed>500){
+							speed=500;
+						};
+						if(index==n){
+							if(speed==500){
+								alert('恭喜您中了：'+n+'等奖');
+								clearTimeout(timer);
+							}else{
+								move();
+							}
+						}else{
+							move();
+						}
+					},speed);
+				}
+				$.ajax({
+					type:"post",
+					url:" http://datainfo.duapp.com/lottery/fruitsubmit.php",
+					async:"true",
+					data:{
+						userID:localStorage.key(1)
+					},
+					dataType:"json",
+					success:function(str){
+						if(str==0){
+							alert("您已抽过奖");
+						}
+						if(str==2){
+							n=Math.floor(Math.random()*8); 
+							move();
+							$.ajax({
+								url:" http://datainfo.duapp.com/lottery/fruitsubmit.php",
+								type:"post",
+								data:{
+									userID:localStorage.key(1),
+									fruit:n
+								},
+								success:function(ss){
+									console.log(ss);
+								}
+							})
+						}
+					}
+				})
+			})
+			$.ajax({
+					type:"post",
+					url:"http://datainfo.duapp.com/lottery/getsuerfr.php",
+					async:"true",
+					dataType:"jsonp",
+					success:function(str){
+						$.each(str,function(n,data){
+							if(n<5){
+								$("<p>").html(data.fruit+"等奖  "+data.userID+"  "+data.timer).appendTo($(".jiang_content"));
+							}
+						})	
+					},
+					error:function(str){
+						console.log(str+"wrong");
+					}
+				})
+			$(".tou_1").on("touchend",function(){
+				window.location.href="shouye.html";
+			})
+		})
+	}
+</script>
+</html>

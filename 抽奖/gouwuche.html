@@ -1,0 +1,376 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"/>
+<link rel="stylesheet" href="icons/iconfont.css"/>
+<style>
+	*{margin:0;padding:0;list-style: none;}
+	html,body{
+		height:100%;
+		width: 100%;
+	}
+	body{
+		font-family:"微软雅黑";
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	header{
+		height: 0.85rem;
+		width: 6.4rem;
+		position: relative;
+
+	}
+	.top_1{
+		height: 0.85rem;
+		background: #a81817;
+		font-size: 0.3rem;
+		line-height: 0.85rem;
+		text-align: center;
+		color: #fff;
+	}
+	.car{
+		display: block;
+		position: absolute;
+		height:0.56rem;
+		width:1.05rem;
+		top:0.15rem;
+		right:0.18rem;
+		background: #9a0808;
+		border-radius:0.20rem;
+		text-align: center;
+		line-height: 0.56rem;
+		font-size: 0.3rem;
+	}
+/*内容区域*/
+section{
+		-webkit-box-flex:1;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		width: 6.4rem;
+	}
+section .kong{
+	font-size: 0.6rem;
+	line-height: 3rem;
+	color: #f00;
+	display: none;
+}	
+.section_1{
+	height:0.9rem;
+	background: #747474;
+	padding-left: 0.25rem;
+	width: 6.15rem; 
+}
+.section_1{
+	font-size:0.26rem;
+	line-height:0.9rem;
+	color:#fff;
+}
+.section_1 .xin_1{
+	margin-right:0.15rem;
+}
+.section_1 .xin_2{
+	color: #ab1919;
+}
+.section_list{
+	-webkit-box-flex:1;
+}
+.section_list li{
+	height: 2.03rem;
+	width: 6.07rem;
+	border-bottom: 1px solid #aaaaaa;
+	padding: 0.27rem 0 0 0.33rem;
+}
+.section_list li dl dt{
+	float: left;
+	height: 1.75rem;
+	width: 1.75rem;
+	border: 1px solid #b9b9b9;
+	margin-right:0.25rem; 
+}
+.section_list li dl dt img{
+	height: 1.75rem;
+	width: 1.75rem;
+}
+.section_list li dl dd {
+	float: left;
+	width: 4rem;
+}
+.section_list .xin_one{
+	float: left;
+}
+.section_list li dl dd p{
+	width: 3.2rem;
+	line-height: 0.38rem;
+	font-size: 0.30rem;
+	cursor:#333333;
+}
+.section_list .xiang_bb span{
+	color: #aa1a19;
+}
+
+.section_list .xiang_cc button{
+	height: 0.42rem;
+	width: 0.6rem;
+	font-size: 0.4rem;
+	color: #fff;
+	line-height: 0.42rem;
+	text-align: center;
+	border-radius:0.1rem;
+	border: 0;
+	background:url(img/xian.png);
+	font-weight: 900;
+	outline: none;
+}
+.section_list .xiang_cc .txt{
+	outline: none;
+	border-radius:0.1rem;
+	height: 0.45rem;
+	width: 0.75rem;
+	font-size: 0.4rem;
+	line-height: 0.45rem;
+	text-align: center; 
+}
+.section_list .laji{
+	padding-left:0.2rem; 
+	width: 0.6rem;
+	float: left;
+	line-height: 0;
+}
+.section_list .laji .iconfont{
+	font-size: 0.5rem;
+}
+
+
+
+/*底部*/
+footer{
+		height: 1rem;
+		width: 6.4rem;
+		background: #484850;
+	}
+	.foot{
+		position: relative;
+	}
+	.foot li{
+		overflow: hidden;
+		float: left;
+		height: 1rem;
+		width: 1.28rem;
+		text-align:center;
+		line-height: 0.4rem;	
+	}
+	.foot li .iconfont{
+		font-size: 0.4rem;
+		color:#fff;
+	}
+	.foot li div{
+		height: 0.3rem;
+		font-size: 0.3rem;
+		color:#fff;
+	}
+	.foot .tebie{
+		border-top:0.05rem solid #b52121;
+		height: 0.95rem;
+	}
+	.foot .shu{
+		position: absolute;
+		top:0.1rem;
+		height: 0.4rem;
+		width: 0.4rem;
+		border-radius:50%;
+		background: #b52121;
+		font-size: 0.26rem;
+		text-align: center;
+		line-height: 0.4rem;
+		color: #fff;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div class="top_1">
+			<h3>购物车</h3>
+			<span class="car">结算</span>
+		</div>
+	</header>
+	<section>
+		<div class="section_1">
+				<span>商品数量：</span>
+				<span class="xin_1"></span>
+				<span>应付总额(不含运费)：</span>
+				<span class="xin_2"></span>
+		</div>
+		<div class="kong">
+			您的购物车好空呦！！
+		</div>
+		<ul class="section_list">
+			
+		</ul>
+	</section>
+	<footer>
+		<ul class="foot">
+			<li>
+				<i class="iconfont">&#xe644;</i>
+				<div>首页</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe692;</i>
+				<div>分类</div>
+			</li>
+			<li class="tebie">
+				<i class="iconfont">&#xe61b;</i>
+				<span class="xin_1 shu"></span>
+				<div>购物车</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe646;</i>
+				<div>我的秀</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe660;</i>
+				<div>更多</div>
+			</li>
+		</ul>
+	</footer>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script>
+	$(function(){
+		var totalPrice=0;
+		var totalNumber=0;
+		$.ajax({
+			type:"get",
+			url:" http://datainfo.duapp.com/shopdata/getCar.php",
+			dataType:"jsonp",
+			data:{
+				userID:localStorage.key(1)
+			},
+			success:function(str){
+				if(str==0){
+					$(".kong").css("display","block");
+
+				}else{
+					$(".kong").css("display","none");
+					$.each(str,function(index,data){
+					var $aLi=$("<li>").attr("goodId",data.goodsID).appendTo($(".section_list"));
+					var $aDl=$("<dl>").appendTo($aLi);
+					var $aDt=$("<dt>").appendTo($aDl);
+					$("<img>").attr("src",data.goodsListImg).appendTo($aDt);
+					var $aDd=$("<dd>").appendTo($aDl);
+					var $aDiv_1=$("<div class='xin_one'></div>").appendTo($aDd);
+					var $aP_1=$("<p class='xiang_aa'></p>").appendTo($aDiv_1);
+					$("<span>").html(data.goodsName).appendTo($aP_1);
+					var $aP_2=$("<p class='xiang_bb'></p>").html("单价：<span class='price'>￥"+(data.price*(data.discount==0?1:data.discount*0.1)).toFixed(2)+"</span>").appendTo($aDiv_1);
+
+					var $aP_3=$("<p class='xiang_cc'></p>").appendTo($aDiv_1);
+					$("<span>").html("数量：").appendTo($aP_3);
+					$("<button class='jian'>-</button>").appendTo($aP_3);
+					$("<input class='txt' type='text'/>").attr("value",data.number).appendTo($aP_3);
+					$("<button class='add'>+</button>").appendTo($aP_3);
+					var $aLaji=$("<div class='laji'></div>").appendTo($aDd);
+					$("<i class='iconfont delate'></i>").html("&#xe68d;").appendTo($aLaji);
+					totalNumber+=parseInt(data.number);
+					totalPrice+=parseInt(data.number)*parseInt((data.price*(data.discount==0?1:data.discount*0.1)));
+				})
+				}
+				
+				$(".xin_1").html(totalNumber);
+				$(".xin_2").html("￥"+totalPrice);
+			}
+		})
+		//删除数据
+		$(".section_list").on("touchend",".delate",function(){
+			var _this=this;
+			$.ajax({
+				type:"post",
+				url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+				data:{
+					userID:localStorage.key(1),
+					goodsID:$(_this).parent().parent().parent().parent().attr("goodId"),
+					number:0
+				},
+				success:function(str){
+					if(str==1){
+						var num=$(_this).parents("li").find(".txt").val();
+						totalNumber=totalNumber-num;
+						var pice=$(_this).parents("li").find(".price").text().slice(1);
+						totalPrice-=parseInt(pice*num);
+						$(".xin_1").html(totalNumber);
+						$(".xin_2").html(totalPrice);
+						$(_this).parents("li").remove();
+
+					}
+				}
+			})
+
+		})
+		// 增加数量
+		$(".section_list").on("touchend",".add",function(e){
+			var self = e.target;
+			var num = $(self).parents("li").find(".txt").val();
+			var id = $(self).parents("li").attr("goodId");
+			var price=$(self).parents("li").find(".price").text().slice(1);
+			var temp=num;
+			num++;
+			$(self).parents("li").find(".txt").val(num);
+			totalNumber+=Math.abs(num-temp);
+			totalPrice+=parseInt(Math.abs(num-temp)*price);
+			$(".xin_1").html(totalNumber);
+			$(".xin_2").html("￥"+totalPrice);
+
+			$.ajax({
+				type:"post",
+				url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+				data:{
+					userID:localStorage.key(1),
+					goodsID:id,
+					number:num
+				},
+				success:function(str){
+					
+				}
+			})
+		})
+		// 减少数量
+		$(".section_list").on("touchend",".jian",function(e){
+			var self = e.target;
+			var num = $(self).parents("li").find(".txt").val();
+			var id = $(self).parents("li").attr("goodId");
+			var price=$(self).parents("li").find(".price").text().slice(1);
+			var temp=num;
+			num==1?num=1:num--;
+			$(self).parents("li").find(".txt").val(num);
+			totalNumber-=Math.abs(temp-num);
+			totalPrice-=parseInt(Math.abs(num-temp)*price);
+			$(".xin_1").html(totalNumber);
+			$(".xin_2").html("￥"+totalPrice);
+
+			$.ajax({
+				type:"post",
+				url:"http://datainfo.duapp.com/shopdata/updatecar.php",
+				data:{
+					userID:localStorage.key(1),
+					goodsID:id,
+					number:num
+				},
+				success:function(str){
+					
+				}
+			})
+		})
+		$(".foot li:nth-child(2)").on("touchend",function(){
+			window.location.href="shouye.html";
+		})
+		$(".foot li:nth-child(1)").on("touchend",function(){
+			window.location.href="shouye.html";
+		})
+	})
+</script>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"/>
+<link rel="stylesheet" href="icons/iconfont.css"/>
+<style>
+	*{margin:0;padding:0;list-style: none;}
+	html,body{
+		height:100%;
+		width: 100%;
+	}
+	body{
+		font-family:"微软雅黑";
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	header{
+		height: 0.85rem;
+		width: 6.4rem;
+		position: relative;
+
+	}
+	.top_1{
+		height: 0.85rem;
+		background: #a81817;
+		font-size: 0.3rem;
+		line-height: 0.85rem;
+		text-align: center;
+		color: #fff;
+	}
+	.car{
+		display: block;
+		position: absolute;
+		height:0.56rem;
+		width:1.05rem;
+		top:0.15rem;
+		right:0.18rem;
+		background: #9a0808;
+		border-radius:0.20rem;
+		text-align: center;
+		line-height: 0.56rem;
+		font-size: 0.4rem;
+	}
+	.huitui{
+		font-size: 0.6rem;
+		color: #fff;
+		position: absolute;
+		left:0.32rem;
+	}
+	section{
+		-webkit-box-flex:1;
+		width:5.8rem;
+		padding:0 0.3rem;
+	}
+	.box dt{
+		height: 4.25rem;
+		width: 5.8rem;
+
+	}
+	.box dt img{
+		height: 4.25rem;
+		width: 5.8rem;
+	}
+	.xiang p{
+		margin-top: 0.14rem;
+		font-size: 0.24rem;
+		color:#8a8a8a;
+	} 
+</style>
+</head>
+<body>
+	<header>
+		<div class="top_1">
+			<i class="huitui iconfont">&#xe619;</i>
+			<h3>商品资料</h3>
+			<i class="car iconfont">&#xe61b;</i>
+		</div>
+	</header>
+	<section>
+		<dl class="box">
+			<dt></dt>
+			<dd class="xiang"></dd>
+		</dl>
+	</section>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script>
+$(function(){
+	var goodsId=location.hash.split("=")[1];
+	$.ajax({
+		type:"get",
+		url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+		dataType:"jsonp",
+		data:{
+			goodsID:goodsId
+		},
+		success:function(str){	
+			$("<img>").attr("src",str[0].goodsListImg).appendTo($(".box dt"));
+			$("<p>").html(str[0].goodsName).prependTo($(".xiang"));
+			var canshu = str[0].detail.split("。");
+			console.log(str[0]);
+			console.log(canshu);
+			for (var i=0;i<canshu.length;i++) {
+				$("<p>").html(canshu[i]).appendTo($(".xiang"));
+			};
+
+		}
+	})
+	$(".huitui").on("touchend",function(){
+		window.location.href="xiangqing.html#id="+goodsId;	
+	})
+})
+	
+</script>
+</html>

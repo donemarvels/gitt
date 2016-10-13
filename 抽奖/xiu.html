@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"/>
+<link rel="stylesheet" href="icons/iconfont.css"/>
+<style>
+	*{margin:0;padding:0;list-style: none;}
+	html,body{
+		height:100%;
+		width: 100%;
+	}
+	body{
+		font-family:"微软雅黑";
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		background: #f7f7f7;
+	}
+	header{
+		height: 0.85rem;
+		width: 6.4rem;
+		position: relative;
+
+	}
+	.top_1{
+		height: 0.85rem;
+		background: #a81817;
+		font-size: 0.3rem;
+		line-height: 0.85rem;
+		text-align: center;
+		color: #fff;
+	}
+	.car{
+		display: block;
+		position: absolute;
+		height:0.56rem;
+		width:1.05rem;
+		top:0.15rem;
+		right:0.18rem;
+		background: #9a0808;
+		border-radius:0.20rem;
+		text-align: center;
+		line-height: 0.56rem;
+		font-size: 0.3rem;
+	}
+
+/*内容区域*/
+section{
+		-webkit-box-flex:1;
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		width: 6.05rem;
+		overflow: hidden;
+		padding-left: 0.35rem;
+	}
+.ziliao{
+	height: 3.15rem;
+	width: 6.4rem;
+	padding-top:0.6rem;
+}
+.ziliao dt{
+	float: left;
+	margin-right:0.32rem; 
+}
+.ziliao dd{
+	float: left;
+}
+.ziliao dd p{
+	font-size: 0.4rem;
+	margin-top: 0.32rem;
+	color: #232323;
+}
+.ziliao dd p strong{
+	color:#f10100;
+}
+.liebiao{
+	height:3.6rem;
+	width: 5.6rem;
+	border: 0.02rem solid #eee;
+	border-radius:0.1rem;
+	background: #fff;
+}
+.liebiao li{
+	height: 0.88rem;
+	border-bottom: 0.02rem solid #eee;
+	line-height: 0.88rem;
+	font-size: 0.4rem;
+	padding: 0 0.28rem;
+}
+.liebiao span{
+	float: left;
+}
+.liebiao strong{
+	float: right;
+}
+
+
+/*底部*/
+footer{
+		height: 1rem;
+		width: 6.4rem;
+		background: #484850;
+	}
+	.foot{
+		position: relative;
+	}
+	.foot li{
+		overflow: hidden;
+		float: left;
+		height: 1rem;
+		width: 1.28rem;
+		text-align:center;
+		line-height: 0.4rem;	
+	}
+	.foot li .iconfont{
+		font-size: 0.4rem;
+		color:#fff;
+	}
+	.foot li div{
+		height: 0.3rem;
+		font-size: 0.3rem;
+		color:#fff;
+	}
+	.foot .tebie{
+		border-top:0.05rem solid #b52121;
+		height: 0.95rem;
+	}
+/*遮罩层*/
+.mengban{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background:rgba(0,0,0,0.7);
+	position:absolute;
+	top:0;
+	left: 0;
+	z-index: 100000;
+}
+.xuanze{
+	position: absolute;
+	height: 3.75rem;
+	width: 3.66rem;
+	top:2rem;
+	left:0.8rem;
+	background: #e8e8e8;
+	border:0.02rem solid #494949;
+	padding: 0 0.47rem;
+	z-index: 1000;
+	border-radius: 0.1rem;
+}
+.xuanze h2{
+	width:3.65rem;
+	height: 0.92rem;
+	border-bottom: 0.02rem solid #ababab;
+	font-size: 0.4rem;
+	line-height: 0.92rem;
+	text-align: center;
+	color:#333333; 
+}
+.xuanze p{
+	font-size: 0.3rem;
+	text-align: center;
+}
+.box_1{
+	float: left;
+	width: 1.5rem;
+	height: 2.5rem;
+}
+.box_1 img{
+	margin:0.35rem 0 0.24rem 0.2rem; 
+	height: 1.15rem;
+	width: 1.15rem;
+}
+.file_1{
+	position: absolute;
+	top:1.4rem;
+	height: 1.15rem;
+	width: 1.15rem;
+	opacity: 0;
+	outline: none;
+}
+.box_2{
+	float: right;
+	width: 1.5rem;
+	height: 2.5rem;
+}
+.box_2 img{
+	margin:0.35rem 0.25rem 0.35rem 0; 
+	height: 1.01rem;
+	width: 1.15rem;
+}
+.file_2{
+	position: absolute;
+	top:1.4rem;
+	height: 1.01rem;
+	width: 1.05rem;
+	opacity: 0;
+	outline: none;
+}
+</style>
+</head>
+<body>
+	<header>
+		<div class="top_1">
+			<h3>我的秀</h3>
+			<span class="car">充值</span>
+		</div>
+	</header>
+	<section>
+		<dl class="ziliao">
+			<dt>
+				<img src="img/ren.png" alt=""/>
+			</dt>
+			<dd>
+				<p>
+					昵称：
+					<span>未知</span>
+				</p>
+				<p>
+					余额：
+					<strong>0</strong>
+				</p>
+			</dd>
+		</dl>
+		<ul class="liebiao">
+			<li>
+				<span>我的订单</span>
+				<strong>&gt;</strong>
+			</li>
+			<li>
+				<span>我的优惠券</span>
+				<strong>&gt;</strong>
+			</li>
+			<li>
+				<span>浏览记录</span>
+				<strong>&gt;</strong>
+			</li>
+			<li>
+				<span>我的收藏</span>
+				<strong>&gt;</strong>
+			</li>
+		</ul>
+	</section>
+	<footer>
+		<ul class="foot">
+			<li>
+				<i class="iconfont">&#xe644;</i>
+				<div>首页</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe692;</i>
+				<div>分类</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe61b;</i>
+				<div>购物车</div>
+			</li>
+			<li class="tebie">
+				<i class="iconfont">&#xe646;</i>
+				<div>我的秀</div>
+			</li>
+			<li>
+				<i class="iconfont">&#xe660;</i>
+				<div>更多</div>
+			</li>
+		</ul>
+	</footer>
+	<div class="mengban">
+		<div class="xuanze">
+			<h2>选择操作</h2>
+			<div class="box_1">
+				<input type="file" class="file_1" accept="image/*" capture="camera"/>
+				<img src="img/xiang.png" alt="">
+				
+				<p>相机</p>
+			</div>
+			<div class="box_2">
+
+				<img src="img/che.png" alt="">
+				<input type="file" class="file_2" capture="photo"/>
+				<p>相册</p>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script>
+	$(function(){
+		$(".ziliao dt").on("touchend",function(){
+			$(".mengban").css("display","block");
+		})
+		$(".mengban").on("touchend",function(){
+			$(".mengban").hide();
+		})
+		$(".xuanze").on("touchend",function(e){
+			e.stopPropagation();
+		})
+	})
+</script>
+</html>

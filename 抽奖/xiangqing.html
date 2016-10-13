@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no"/>
+<link rel="stylesheet" href="icons/iconfont.css"/>
+<link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+<style>
+	*{margin:0;padding:0;list-style: none;}
+	html,body{
+		height:100%;
+		width: 100%;
+	}
+	body{
+		font-family:"微软雅黑";
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+	}
+	header{
+		height: 0.85rem;
+		width: 6.4rem;
+		position: relative;
+
+	}
+	.top_1{
+		height: 0.85rem;
+		background: #a81817;
+		font-size: 0.3rem;
+		line-height: 0.85rem;
+		text-align: center;
+		color: #fff;
+	}
+	.car{
+		display: block;
+		position: absolute;
+		height:0.56rem;
+		width:1.05rem;
+		top:0.15rem;
+		right:0.18rem;
+		background: #9a0808;
+		border-radius:0.20rem;
+		text-align: center;
+		line-height: 0.56rem;
+		font-size: 0.4rem;
+	}
+	.huitui{
+		font-size: 0.6rem;
+		color: #fff;
+		position: absolute;
+		left:0.32rem;
+	}
+	section{
+		display: -webkit-box;
+		-webkit-box-orient:vertical;
+		-webkit-box-flex:1;
+		overflow:hidden;
+	}
+	.banner{
+		position: relative;
+		-webkit-box-flex:1;
+		width: 6.4rem;
+		background:#f3eff0;
+	}
+
+	.banner dt{
+		height:4.35rem;
+		width: 6.4rem; 
+	}
+	.banner dt .swiper-container{
+		overflow: visible;
+	}
+	.banner_1{
+		height:3.65rem;
+		width: 6.4rem; 
+	}
+	.banner_1 div{
+		height:3.65rem;
+		width: 2.9rem; 
+	}
+	.banner_1 div img{
+		height:100%;
+		width: 100%; 
+	}
+	#feiye{
+		background: #bcbcbc;
+		border-radius: 0.5rem;
+		height: 0.5rem;
+		width: 1.5rem;
+		position: absolute;
+		left:2.7rem;
+		bottom:-0.7rem;
+		line-height: 0.01rem;
+	}
+	#feiye span{
+		background: #fff;
+	}
+
+	.qing p{
+		font-size:0.3rem;
+		margin:0 0 0.3rem 0.22rem;
+		color: #454545;
+	}
+	.qing p strong{
+		color: #ba0a55;
+		margin-right: 0.28rem;
+	}
+	.qing p span{
+		text-decoration:line-through;
+	}
+
+	.xiangqing{
+		height: 0.72rem;
+		width: 6.18rem;
+		padding:0.28rem 0 0 0.22rem;
+	}
+	.xiangqing .wen{
+		float: left;
+		height: 0.39rem;
+		width: 0.37rem;
+	}
+	.xiangqing span{
+		float: left;
+		margin-left:0.3rem;
+		color: #656565;
+		font-size: 0.3rem;
+	}
+	.xiangqing .xia{
+		float: right;
+		height: 0.17rem;
+		width: 0.12rem;
+		margin:0.12rem 0.33rem 0 0; 
+	}
+
+
+	footer{
+		height: 1rem;
+		width:6.4rem;
+		background: #a3a3a3;
+		text-align: center;
+	}
+	.shopping{
+		margin: 0.07rem 0 0 1.02rem;
+		height: 0.8rem;
+		width: 4.35rem;
+		border-radius: 0.1rem;
+		border:0.01rem solid #930101;
+		background: #ad1b1b;
+		text-align: center;
+		line-height: 0.8rem;
+		font-size: 0.3rem;
+		color: #fff;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div class="top_1">
+			<i class="huitui iconfont">&#xe619;</i>
+			<h3>商品资料</h3>
+			<i class="car iconfont">&#xe61b;</i>
+		</div>
+	</header>
+	<section>
+		<dl class="banner">
+			<dt>
+				<div class="swiper-container aa">
+					<div class="swiper-wrapper banner_1"> 
+				 
+					</div> 
+					<!-- 如果需要分页器 --> 
+					<div class="swiper-pagination" id="feiye">
+						
+					</div>
+				</div> 
+			</dt>
+			<dl class="qing">
+
+			</dl>
+		</dl>
+		<div class="xiangqing">
+			<img src="img/4.png" alt="" class="wen" />
+			<span>查看商品详情</span>
+			<img src="img/5.png" alt="" class="xia"/>
+		</div>
+	</section>
+	<footer>
+		<div class="shopping">添加到购物车</div>
+	</footer>
+</body>
+<script type="text/javascript" src="js/zepto.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/rem.js"></script>
+<script>
+	$(function(){
+		var id=location.hash.split("=")[1];
+		$.ajax({
+			type:"get",
+			url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+			data:{
+				goodsID:id
+			},
+			dataType:"jsonp",
+			success:function(data){
+				//console.log(data);
+				$(".banner_1").html("");
+				$.each(data,function(index,str){
+					var arr=JSON.parse(str.goodsBenUrl)
+					for (var i =0; i<3;i++) {
+						var jiequ = arr[i].slice(0,4);
+						console.log(jiequ);
+						if(jiequ=="http"){
+							var $aDiv=$("<div class='swiper-slide'></div>");
+							$aDiv.appendTo($(".banner_1"));
+							$("<img>").attr("src",arr[i]).appendTo($aDiv);
+						}else{
+							var $aDiv=$("<div>");
+							$aDiv.appendTo($(".banner_1"));
+							$("<img>").attr("src","https:"+arr[i]).appendTo($aDiv);
+						}
+						
+					};
+					$("<p>").html(str.goodsName).appendTo($(".qing"));
+					$("<p>").html("<strong>￥"+(str.price*(str.discount==0?1:str.discount*0.1)).toFixed(2)+"</strong><span>￥"+str.price+"</span>").appendTo($(".qing"));
+					$("<p>").html("购买人数："+str.buynumber).appendTo($(".qing"));
+							
+				})
+			}
+		})
+		$(".xia").on("touchend",function(){
+			window.location.href="xiangqing01.html#id="+id;
+		})
+		$(".huitui").on("touchend",function(){
+			window.location.href="shouye.html";
+		})
+
+		//console.log(localStorage.key(1));
+		$(".shopping").on("touchend",function(){
+			$.ajax({
+				type:"post",
+				url:" http://datainfo.duapp.com/shopdata/updatecar.php",
+				data:{
+					userID:localStorage.key(1),
+					goodsID:id,
+					number:1
+				},
+				success:function(str){
+					console.log(str);
+				}
+			})
+		})
+		$(".car").on("touchend",function(){
+			window.location.href="gouwuche.html";
+		})
+	})
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.onload=function(){
+	var mySwiper = new Swiper ('.swiper-container', { 
+		direction: 'horizontal', loop: true, 
+		autoplay:3000,
+		// 如果需要分页器
+		pagination: '.swiper-pagination',
+		slidesPerView: 2,
+		centeredSlides: true,
+		paginationClickable: true
+	})
+}
+	 
+
+</script>
+</html>
